@@ -1,6 +1,7 @@
 const ProductosDAOMongoDB = require(`./products/ProductsDAOMongoDB`);
 const CarritoDAOMongoDB = require(`./carts/CartDAOMongoDB`);
 const OrdenesDAOMongoDB = require(`./orders/OrdersDAOMongoDB`);
+const MensajesDAOMongoDB = require('./mensajes/MensajesDAOMongoDB');
 
 const getStorage = () => {
   const storage = process.env.STORAGE;
@@ -11,6 +12,7 @@ const getStorage = () => {
         productos: new ProductosDAOMongoDB(),
         carrito: new CarritoDAOMongoDB(),
         ordenes: new OrdenesDAOMongoDB(),
+        mensaje: new MensajesDAOMongoDB(),
       };
       break;
 
@@ -19,6 +21,7 @@ const getStorage = () => {
         productos: new ProductosDAOMongoDB(),
         carrito: new CarritoDAOMongoDB(),
         ordenes: new OrdenesDAOMongoDB(),
+        mensaje: new MensajesDAOMongoDB(),
       };
       break;
   }

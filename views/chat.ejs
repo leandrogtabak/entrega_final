@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+
+
+<head>
+    <%- include(`./partials/head`) %>
+</head>
+
+<body class="bg-light">
+    <header>
+        <%- include('./partials/header') %>
+    </header>
+    <div class="jumbotron d-flex align-items-center bg-light flex-column">
+        <div id="chat-container" class="d-flex flex-column py-4">
+            <div id="messages-container">
+                <% mensajesById.forEach(function(message) { %>
+                    <div class="message">
+                        <div class="email">
+                            <%= message.usuario %>:
+                        </div>
+                        <div class="mensaje">
+                            <%= message.mensaje %>
+                        </div>
+                    </div>
+                    <% }) %>
+            </div>
+            <div id="input-container">
+                <form id="message-form" action="/api/chat" method="POST">
+                    <input type="text" name="mensaje" id="message-input" placeholder="Escribe un mensaje">
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+        </div>
+
+</body>
+
+<footer>
+    <%- include('./partials/footer') %>
+</footer>
+
+</html>
